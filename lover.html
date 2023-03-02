@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If u wanna be my...</title>
+    <link rel="stylesheet" href="lover.css">
+    <style>
+        #div1 {
+          width: 300px;
+          height: 150px;
+          border: 1px solid #eb478b;
+          position:absolute;
+          top:40%;
+          left:25%;
+        }
+        #div2 {
+                  width: 300px;
+                  height: 150px;;
+                  border: 1px solid #eb478b;
+                  position: absolute;
+                  top:40%;
+                  left:75%;
+                }
+                
+ </style>
+            
+      <script>
+        function allowDrop(ev) {
+          ev.preventDefault();
+        }
+        
+        function drag(ev) {
+          ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        function drop(ev) {
+          ev.preventDefault();
+          var data = ev.dataTransfer.getData("text");
+          ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
+</head>
+<body>
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img id="drag1" src="stickers/butterfly.gif" draggable="true" ondragstart="drag(event)" width="200px" height="auto">
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <img id="drag2" src="stickers/princess.gif" draggable="true" ondragstart="drag(event)" width="250px" height="auto">
+    <img id="drag 3" src="stickers/psycho.gif" draggable="true" ondragstart="drag(event)" width="200px" height="auto">
+   
+    <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+</body>
+</html>
